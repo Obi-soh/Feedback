@@ -104,14 +104,14 @@
     try { localStorage.setItem(memberKey, memberStatus); } catch (_) {}
     if (memberStatus === 'outside') clearGroupAnswersForOutside();
     document.getElementById('start-button').disabled = false;
-    document.getElementById('question-count').textContent = memberStatus === 'outside' ? '٤٨' : '٥٤';
+    document.getElementById('question-count').textContent = memberStatus === 'outside' ? '٥٠' : '٥٦';
     document.getElementById('start-button').textContent = wasOutside && memberStatus === 'member' ? 'ابدأ الاستبيان ←' : 'ابدأ الاستبيان ←';
   }));
   if (memberStatus) {
     const selected = document.querySelector(`input[name="membership"][value="${memberStatus}"]`);
     if (selected) selected.checked = true;
     document.getElementById('start-button').disabled = false;
-    document.getElementById('question-count').textContent = memberStatus === 'outside' ? '٤٨' : '٥٤';
+    document.getElementById('question-count').textContent = memberStatus === 'outside' ? '٥٠' : '٥٦';
   }
 
   document.getElementById('start-button').addEventListener('click', () => {
