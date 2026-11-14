@@ -53,7 +53,7 @@
       }
       questionNum++;
       const id = `s${step}q${localIndex}`;
-      const required = label === 'الاسم أو اللقب المستخدم داخل التجمع';
+    const required = label === 'إسم الفنان';
       const card = document.createElement('article');
       card.className = 'question-card';
       const numberLabel = label === 'كم لمة حضرت؟' ? 'متابعة' : String(questionNum).padStart(2,'0');
@@ -99,7 +99,7 @@
     if (!String(name || '').trim()) {
       step = 0; render();
       const field = document.getElementById('s0q0');
-      if (field) { field.focus(); field.setCustomValidity('أدخل الاسم أو اللقب للمتابعة.'); field.reportValidity(); field.addEventListener('input',()=>field.setCustomValidity(''),{once:true}); }
+      if (field) { field.focus(); field.setCustomValidity('أدخل إسم الفنان للمتابعة.'); field.reportValidity(); field.addEventListener('input',()=>field.setCustomValidity(''),{once:true}); }
       window.scrollTo({top:0,behavior:'smooth'}); return;
     }
     const button = document.getElementById('submit-button');
@@ -125,11 +125,11 @@
     } catch (error) {
       document.getElementById('form-hint').textContent = 'تعذر حفظ الإجابات في قاعدة البيانات. بقيت المسودة محفوظة على جهازك؛ تحقق من إعدادات Supabase وحاول مجدداً.';
       console.error('Supabase submission failed:', error);
-      button.disabled = false; button.innerHTML = 'إرسال الحكاية <span aria-hidden="true">✦</span>';
+      button.disabled = false; button.innerHTML = 'رفع الاستبيان <span aria-hidden="true">✦</span>';
     }
   });
   document.getElementById('restart-button').addEventListener('click', () => { success.hidden = true; intro.hidden = false; survey.hidden = true; window.scrollTo({top:0,behavior:'smooth'}); });
   // Resume any saved work and keep the conditional attendance question in sync.
   document.getElementById('start-button').textContent = Object.keys(answers).length ? 'تابع من حيث توقفت ←' : 'ابدأ الحكاية ←';
-  document.getElementById('form-hint').textContent = `هناك ${totalQuestions} سؤالاً؛ يمكنك تخطي ما لا ترغب بالإجابة عنه. تُحفظ المسودة على هذا الجهاز.`;
+  document.getElementById('form-hint').textContent = `هناك ${totalQuestions} سؤالاً؛ يمكنك تخطي ما لا ترغب بالإجابة عنه. إسم الفنان مطلوب، وتُحفظ المسودة على هذا الجهاز.`;
 })();
