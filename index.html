@@ -24,8 +24,14 @@
           <span class="eyebrow"><i></i> مساحة الفنانين · استبيان المجتمع</span>
           <h1>كل فنان عندو حكاية،<br><span>خلينا نعرف حكايتك.</span></h1>
           <p>مساحة خفيفة نسمع فيها تجاربكم، أفكاركم، واللحظات التي شكلت رحلتكم مع الرسم.</p>
-          <div class="hero-meta"><span><b>٩</b> محاور</span><span class="meta-dot"></span><span><b>٥٤</b> سؤالاً اختياريّاً</span><span class="meta-dot"></span><span>خذ وقتك براحتك</span></div>
-          <button class="button button-gold" id="start-button" type="button">ابدأ الحكاية <span aria-hidden="true">←</span></button>
+          <div class="hero-meta"><span><b id="question-count">٥٤</b> سؤالاً</span><span class="meta-dot"></span><span>خذ وقتك براحتك</span></div>
+          <fieldset class="membership-choice">
+            <legend>قبل البدء، هل أنت ضمن تجمع رسامين الجزيرة؟</legend>
+            <label><input type="radio" name="membership" value="member"><span>نعم، أنا ضمن التجمع</span></label>
+            <label><input type="radio" name="membership" value="outside"><span>لا، أنا من خارج التجمع</span></label>
+            <small>أسئلة أعضاء التجمع تظهر لأعضائه فقط. سؤال عدد اللمات متاح للجميع.</small>
+          </fieldset>
+          <button class="button button-gold" id="start-button" type="button" disabled>ابدأ الاستبيان <span aria-hidden="true">←</span></button>
         </div>
       </section>
 
